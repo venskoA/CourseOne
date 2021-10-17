@@ -95,7 +95,60 @@ import Foundation
 
 // Логические операторы
 // && || !
+//
+//let kris = false
+//
+//if !kris {
+//    print(" GooD ")
+//} else {
+//    print(" PiZDECH ")
+//}
 
+//   Функиии
+
+//func printKris () -> String {
+//    return "I love You, Kriss"
+//}
+//
+//let name = printKris()
+//print(name)
+//
+//printKris()
+//
+//func printName (name: String) {
+//    print("Ваше имя \(name )")
+//}
+//
+//printName(name: "Kristina")
+//printName(name: "Andrey")
+//printName(name: "Pety")
+
+//func summa(one: Int, two: Int) -> Int {
+//    return one + two
+//}
+//
+//let x = summa(one: 3, two: 6)
+//print(x)
+//
+//
+//func printSumma(one: Int, two: Int) {
+//    print(one + two)
+//}
+//
+//printSumma(one: 7, two: 6)
+//
+//var testArray: [Int] = []
+//
+//print(testArray)
+//
+//for i in 0...10 {
+//    testArray.append(i)
+//}
+//
+//print(testArray)
+//
+//
+//
 
 
 
