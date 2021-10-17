@@ -7,5 +7,8 @@
 
 import Foundation
 
-print("Hello, World!")
+var x: Int = 5
 
+x += 1
+
+print(x)
