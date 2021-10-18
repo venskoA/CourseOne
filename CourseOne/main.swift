@@ -79,16 +79,18 @@ print(newArray)
 
 //6. Заполнить массив из 100 элементов различными простыми числами. Натуральное число, большее единицы, называется простым, если оно делится только на себя и на единицу. Для нахождения всех простых чисел не больше заданного числа n, следуя методу Эратосфена, нужно выполнить следующие шаги
 
-//func addProstNamber (namber: Int) -> [Int] {
-//
-//    var arrayNamber = [2, 3, 5, 7]
-//    for i in 2...1000 {
-//        if (i % 2 != 0) && (i % 3 != 0) && (i % 5 != 0) && (i % 7 != 0){
-//            arrayNamber.append(i)
-//        }
-//    }
-//    arrayNamber.removeLast(22)
-//    return arrayNamber
-//}
-//
-//print(addProstNamber(namber: 100))
+func addProstNamber (namber: Int) -> [Int] {
+
+    var arrayNamber = [2, 3, 5, 7, 11, 17]
+    for i in 2...namber {
+        if (i % 2 != 0) && (i % 3 != 0) && (i % 5 != 0) && (i % 7 != 0) && (i % 11 != 0) && (i % 17 != 0){
+            arrayNamber.append(i)
+        }
+        if arrayNamber.count == 100 {
+            break
+        }
+    }
+    return arrayNamber
+}
+
+print(addProstNamber(namber: 100000))
