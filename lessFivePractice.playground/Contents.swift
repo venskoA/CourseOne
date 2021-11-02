@@ -351,53 +351,104 @@
 //    var item = [T]()
 //
 //}
+//
+//var first = "j  g  hhuihikj jkhj"
+//var second = "gjh gj jgjjguu uh ih iio"
+//func change<T> (a: T, b: T) {
+//    let tmp = first
+//    first = second
+//    second = tmp }
+//
+//change(a: first, b: second)
+//
+//first // 5
+//second // 3
+//
+//func value<Tone, Ttwo> (a: Tone, b: Ttwo) {
+//    print("Tone = \(a), Ttwo = \(b)")
+//}
+//
+//value(a: 87878, b: "dhfkjg hdkjfk")
+//value(a: "hjhj jhjk", b: 9887)
+//
+//
+//func summaOne<T: Numeric> (a: T, b: T) {
+//    print(a + b)
+//}
+//
+//summaOne(a: 789787, b: 26356.889978)
+//summaTwo(a: 635, b: 676767.34090239928)
+//
+//func summaTwo<T> (a: T, b: T) where T: Numeric {
+//    print(a + b)
+//}
+//
+//summaTwo(a: 8989.9999, b: 878236)
+//summaTwo(a: 87812.566627, b: 123298.87832)
+//
+//// Subscript
+//
+//struct itSector {
+//    let name: [String]
+//
+//    subscript(index: Int) -> String {
+//            return name[index]
+//    }
+//}
+//
+//let name = itSector(name: ["Ivan", "Pety", "Victor"])
+//
+//print(name[0])
+//print(name.name[0])
 
-var first = "j  g  hhuihikj jkhj"
-var second = "gjh gj jgjjguu uh ih iio"
-func change<T> (a: T, b: T) {
-    let tmp = first
-    first = second
-    second = tmp }
 
-change(a: first, b: second)
-
-first // 5
-second // 3
-
-func value<Tone, Ttwo> (a: Tone, b: Ttwo) {
-    print("Tone = \(a), Ttwo = \(b)")
+enum EnumError: Error {
+    case errorOne
+    case errorTwo
+    case errorThree
 }
 
-value(a: 87878, b: "dhfkjg hdkjfk")
-value(a: "hjhj jhjk", b: 9887)
-
-
-func summaOne<T: Numeric> (a: T, b: T) {
-    print(a + b)
+struct InputData {
+    var price: Int
+    var numder: Int
 }
 
-summaOne(a: 789787, b: 26356.889978)
-summaTwo(a: 635, b: 676767.34090239928)
+class Mashine {
 
-func summaTwo<T> (a: T, b: T) where T: Numeric {
-    print(a + b)
-}
+    var product = ["Chips": InputData(price: 10, numder: 13),
+                   "Cola": InputData(price: 12, numder: 25),
+                   "Burger": InputData(price: 9, numder: 19)]
 
-summaTwo(a: 8989.9999, b: 878236)
-summaTwo(a: 87812.566627, b: 123298.87832)
+    var bank = 0
 
-// Subscript
+    func obrabotcaError(name: String) throws {
+        guard var index = product[name] else {
+            throw EnumError.errorOne
+        }
 
-struct itSector {
-    let name: [String]
+        guard index.numder > 0 else {
+            throw EnumError.errorTwo
+        }
 
-    subscript(index: Int) -> String {
-            return name[index]
+        guard bank >= index.price else {
+            throw EnumError.errorThree
+        }
+
+        index.numder -= 1
+
+        print("Продук \(name) выдается")
     }
 }
 
-let name = itSector(name: ["Ivan", "Pety", "Victor"])
+let firstNumber = Mashine()
+firstNumber.bank = 150
 
-print(name[0])
-print(name.name[0])
+do {
+    try firstNumber.obrabotcaError(name: "Coddsdsla")
+} catch {
+    print("error \(EnumError.errorTwo)")
+}
+
+
+
 
