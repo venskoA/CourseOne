@@ -386,9 +386,18 @@ func summaTwo<T> (a: T, b: T) where T: Numeric {
 summaTwo(a: 8989.9999, b: 878236)
 summaTwo(a: 87812.566627, b: 123298.87832)
 
+// Subscript
 
-struct Book {
-    let number: Double
+struct itSector {
+    let name: [String]
 
-    subscript book 
+    subscript(index: Int) -> String {
+            return name[index]
+    }
 }
+
+let name = itSector(name: ["Ivan", "Pety", "Victor"])
+
+print(name[0])
+print(name.name[0])
+
